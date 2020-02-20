@@ -1,0 +1,47 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.btn {
+  background-color:  rgb(53, 20, 241);
+  color: white;
+  padding: 12px 20px;
+  margin-top: 5%;
+  margin-left: 1%;
+  margin-bottom: 5%;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+  border-radius: 20px;
+  align-items: center;
+}
+.btn1{
+  background-color:  rgb(53, 20, 241);
+  color: white;
+  padding: 12px 20px;
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-bottom: 5%;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+  border-radius: 20px;
+  align-items: center;
+}
+button:hover {
+  opacity: 0.8;
+}
