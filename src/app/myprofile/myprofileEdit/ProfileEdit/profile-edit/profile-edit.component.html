@@ -1,0 +1,42 @@
+<div class="container">
+
+  <form [formGroup]="editProfile" (ngSubmit)="onProfileEdit()" >
+    <h1 class="hh"><b>Edit Your Profile</b></h1>
+
+    <div class="form-groupup">
+      <mat-label><b>Name :</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Your Name" formControlName="worker_name" type="text">
+      <!-- <label class="alert alert-danger" *ngIf="addproduct.get('email_id').hasError('required') && !addproduct.get('email_id').pristine" >Email is required</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('email_id').hasError('email') && !addproduct.get('email_id').pristine" >Email is Invalid</label> -->
+    </div><br>
+
+    <div class="form-group" >
+      <mat-label><b>Email Id :</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Your Email Id" formControlName="email_id" type="text" >
+      <!-- <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('required') && !addproduct.get('user_name').pristine" >Name is required</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('minlength') && !addproduct.get('user_name').pristine" >Name shoul be > 5</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('user_name').hasError('pattern') && !addproduct.get('user_name').pristine" > Only Chars</label> -->
+    </div><br>
+
+    <div class="form-group" >
+      <mat-label><b>Mobile No :</b></mat-label><br>
+      <input class="form-control" placeholder="Enter Your Mobile No" formControlName="mobile_no" type="text">
+      <!-- <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('required') && !addproduct.get('mobile_no').pristine" >mobile no is required</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('pattern') " > Only digits</label> -->
+    </div><br>
+
+    <div class="form-group" >
+      <mat-label><b>Address :</b></mat-label><br>
+      <textarea class="form-control" placeholder="Enter Your Address" formControlName="address" type="text"></textarea>
+      <!-- <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('required') && !addproduct.get('mobile_no').pristine" >mobile no is required</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('maxlength')" >only 10 digits</label>
+      <label class="alert alert-danger" *ngIf="addproduct.get('mobile_no').hasError('pattern') " > Only digits</label> -->
+    </div><br>
+
+    <div class="form-group">
+      <button  class="btn-btn success" >Submit</button>
+      <button  class="btn" (click)="onBack()" >Back</button>
+    </div>
+
+</form>

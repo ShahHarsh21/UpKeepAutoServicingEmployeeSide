@@ -1,0 +1,17 @@
+<!-- <p>image-edit works!</p> -->
+
+<div>
+  <mat-label><b>Your Current Image :</b></mat-label>
+  <div>
+    <img src="{{img}}" height="200px" width="300px">
+  </div>
+</div>
+<div>
+  <mat-label><b>Edit Image :</b></mat-label>
+  <div [formGroup]="editImage" (submit)="onImageSubmit()">
+    <input type="File" formControlName="worker_image" (change)="onImageChange($event)">
+  </div>
+  <div>
+    <button type="submit" class="btn"></button>
+  </div>
+</div>

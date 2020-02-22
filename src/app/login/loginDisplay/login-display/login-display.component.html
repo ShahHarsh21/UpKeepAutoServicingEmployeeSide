@@ -1,27 +1,25 @@
 <div class="container">
 
-  <form [formGroup]="WorkerloginForm" (ngSubmit)="onLogin()">
+  <form [formGroup]="WorkerloginForm" (ngSubmit)="onLoginClick()">
     <h1 class="hh">Login</h1>
     <div class="imgcontainer">
         <img  alt="Avatar" class="avatar">
-      </div>
+    </div>
     <div class="container">
      <!-- <mat-form-field> -->
-        <label ><b>ENTER EMAIL</b></label>
+        <label ><b>ENTER EMAIL</b></label><br>
         <input matInput formControlName="email_id" type="text" ><mat-icon matPrefix>mail</mat-icon>
-        <mat-label *ngIf="WorkerloginForm.get('email_id').hasError('required') && !WorkerloginForm.get('email_id').pristine ">Email
-          should not be empty</mat-label>
+        <mat-label *ngIf="WorkerloginForm.get('email_id').hasError('required') && !WorkerloginForm.get('email_id').pristine ">Email should not be empty</mat-label>
         <mat-label *ngIf="WorkerloginForm.get('email_id').hasError('email') && !WorkerloginForm.get('email_id').pristine ">Invalid
           Email</mat-label>
       <!-- </mat-form-field> -->
       <br>
       <!-- <mat-form-field> -->
-        <label ><b>Password</b></label>
+        <label ><b>Enter Password</b></label><br>
         <input type="password" matInput formControlName="password"><i class="material-icons">remove_red_eye</i>
-        <mat-label *ngIf="WorkerloginForm.get('password').hasError('required') && !WorkerloginForm.get('password').pristine ">Email
-          should not be empty</mat-label>
+        <mat-label *ngIf="WorkerloginForm.get('password').hasError('required') && !WorkerloginForm.get('password').pristine ">Email should not be empty</mat-label>
       <!-- </mat-form-field> -->
       </div>
-      <button type="submit" >Login</button>
+      <button type="submit">Login</button>
     </form>
   </div>

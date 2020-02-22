@@ -1,0 +1,18 @@
+<!-- <p>vehicle-assigned-edit works!</p> -->
+<form [formGroup]="EditWorker" (ngSubmit)="onUpdateSubmit()">
+  <div class="form-control">
+    <mat-label><b>Status</b></mat-label><br>
+    <select type="dropbox" formControlName="status" (change)="onChange()">
+      <option value="pending">Pending</option>
+      <option value="done" >Done</option>
+    </select>
+  </div>
+  <div class="form-control">
+    <mat-label><b>Remark :</b></mat-label><br>
+    <textarea   formControlName="remark"></textarea>
+  </div>
+  <div>
+    <button type="submit">Sumbit</button> |
+    <button type="button" (click)="onClickBack()">Back</button>
+  </div>
+</form>

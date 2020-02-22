@@ -10,9 +10,10 @@ export class LoginDataService {
   private url: string = environment.url + "workerLogin/";
   constructor(private _http:HttpClient) { }
 
-
-  login(obj) {
+  login(obj)
+  {
     const body = JSON.stringify(obj);
+    console.log(body);
     const head = new HttpHeaders().set(environment.header, environment.value);
     return this._http.post(this.url, body, { headers: head });
   }

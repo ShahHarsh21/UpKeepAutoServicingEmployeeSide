@@ -1,4 +1,5 @@
-.sidenav-container {
+.sidenav-container
+{
   height: 100%;
 }
 
@@ -11,13 +12,14 @@
 }
 
 .mat-toolbar.mat-primary {
+  background-color: blue;
   position: sticky;
   top: 0;
   z-index: 1;
 }
 
 .btn {
-  background-color:  rgb(53, 20, 241);
+  background-color:red;
   color: white;
   padding: 12px 20px;
   margin-top: 5%;
@@ -30,7 +32,7 @@
   align-items: center;
 }
 .btn1{
-  background-color:  rgb(53, 20, 241);
+  background-color: green;
   color: white;
   padding: 12px 20px;
   margin-top: 5%;
@@ -42,6 +44,7 @@
   border-radius: 20px;
   align-items: center;
 }
-button:hover {
+button:hover
+{
   opacity: 0.8;
 }
