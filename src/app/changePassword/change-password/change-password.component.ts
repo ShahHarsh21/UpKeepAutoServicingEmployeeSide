@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MyprofileDataService } from 'src/app/myprofile/myprofile-data.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ChangePasswordService } from '../change-password.service';
 
 @Component({
   selector: 'app-change-password',
@@ -11,11 +12,12 @@ import { ActivatedRoute } from '@angular/router';
 export class ChangePasswordComponent implements OnInit {
   params_worker_id:any;
   oldPassword:string;
-  passChange :FormGroup;
-  constructor(public _passData:MyprofileDataService) { }
+  passChangeForm :FormGroup;
+  flag : boolean = false;
+  constructor(public _passData:MyprofileDataService,public _password: ChangePasswordService,public _routs:Router) {}
 
   ngOnInit(): void {
-    // localStorage.getItem('worker_id');
+    localStorage.getItem('worker_id');
     this.params_worker_id =localStorage.getItem('worker_id');
     console.log(this.params_worker_id);
     this._passData.getPasswordById(this.params_worker_id).subscribe(
@@ -25,31 +27,49 @@ export class ChangePasswordComponent implements OnInit {
       }
     );
 
-    this.passChange =new FormGroup({
-      oldPass : new FormControl(null),
-      Pass :new FormGroup({
-        newPass :new FormControl(null),
-        confimPass : new FormControl(null)
+    this.passChangeForm =new FormGroup({
+        email_id : new FormControl(Validators.required,Validators.email),
+        Pass :new FormGroup({
+          oldPass : new FormControl(null,Validators.required),
+          confimOldPass : new FormControl(null,Validators.required),
       }),
+      newPass :new FormControl(null,Validators.required,Validators.maxLength[8]),
     });
   }
   confirmPass()
   {
-    if((this.passChange.value.Pass) === this.oldPassword[0])
+    if((this.passChangeForm.value.Pass) === this.oldPassword[0])
     {
-      console.log("SAme Che");
+      this.flag = true;
+      console.log("Same Che");
+      let item = {
+        "email_id" : this.passChangeForm.value('email_id'),
+        "password" : this.passChangeForm.value('newPass')
+      };
+      this._password.changePassword(item,this.params_worker_id).subscribe(
+        (Data : any)=>{
+          console.log(Data);
+          alert("Your PAssword Has been Changed");
+          this._routs.navigate(['nav']);
+        }
+      );
     }
     else
     {
-      console.log("SAme nathi");
+      this.flag = false;
+      console.log("Same nathi");
     }
   }
   onClickBack()
   {
-
+    this._routs.navigate(['/nav/']);
   }
   onChangePassword()
   {
     this.confirmPass();
+  }
+  onForgotPasswordClick()
+  {
+    this._routs.navigate(['/nav/forgotPassword/']);
   }
 }

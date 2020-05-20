@@ -43,4 +43,20 @@ export class VehicleAssignedDataService {
     const head = new HttpHeaders().set(environment.header, environment.value);
     return this._http.put(this.statusRemarkUrl,body,{headers:head});
   }
+  getAllProduct()
+  {
+    return this._http.get(environment.url+'product/');
+  }
+  updateAssignedVehicle(vehicle_assigned_id,item)
+  {
+    let obj = { "vehicle_assigned_id": vehicle_assigned_id, "Products": item };
+    const body=JSON.stringify(obj);
+    console.log(body);
+    const head = new HttpHeaders().set(environment.header, environment.value);
+    return this._http.post(environment.url+'vehicleAssigned11/', body,{headers : head});
+  }
+  getAllImages()
+  {
+    return this._http.get(environment.url+'Product_image/');
+  }
 }

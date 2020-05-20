@@ -31,6 +31,10 @@ import { VehicleViewmoreComponent } from './vehicleAssigned/vehicleViewmore/vehi
 import { ImageEditComponent } from './myprofile/myprofileEdit/ImageEdit/image-edit/image-edit.component';
 import { ProfileEditComponent } from './myprofile/myprofileEdit/ProfileEdit/profile-edit/profile-edit.component';
 import { ChangePasswordComponent } from './changePassword/change-password/change-password.component';
+import { AddRequirmentsComponent } from './vehicleAssigned/Requirments/add-requirments/add-requirments.component';
+import { ForgotPasswordComponent } from './changepassword/fogotPassword/forgot-password/forgot-password.component';
+import { LeaveApplicationComponent } from './Leave/leave-application/leave-application.component';
+import { PastLeaveComponent } from './leave/past/past-leave/past-leave.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +47,11 @@ import { ChangePasswordComponent } from './changePassword/change-password/change
     VehicleViewmoreComponent,
     ImageEditComponent,
     ProfileEditComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    AddRequirmentsComponent,
+    ForgotPasswordComponent,
+    LeaveApplicationComponent,
+    PastLeaveComponent
   ],
   imports: [
     BrowserModule,

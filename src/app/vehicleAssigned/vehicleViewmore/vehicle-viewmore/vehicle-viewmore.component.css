@@ -1,3 +1,4 @@
+/* Full-width inputs */
 input[type=text], input[type=password],input[type=number],input[type=date] {
   width: 90%;
   padding: 12px 20px;

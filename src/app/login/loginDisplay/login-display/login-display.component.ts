@@ -15,8 +15,8 @@ export class LoginDisplayComponent implements OnInit {
 
   ngOnInit() {
     this.WorkerloginForm = new FormGroup({
-      email_id: new FormControl('harshshah942737@gmail.com', [Validators.required,Validators.email]),
-      password: new FormControl('viral123', [Validators.required])
+      email_id: new FormControl('', [Validators.required,Validators.email]),
+      password: new FormControl('', [Validators.required])
     });
 
   }

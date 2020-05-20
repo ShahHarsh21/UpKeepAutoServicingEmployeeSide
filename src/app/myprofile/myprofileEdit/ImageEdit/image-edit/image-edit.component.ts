@@ -12,6 +12,7 @@ import { MyprofileDataService } from 'src/app/myprofile/myprofile-data.service';
 export class ImageEditComponent implements OnInit {
   editImage :FormGroup;
   img:string='';
+  selectedfile : File= null;
   worker_id:number=0;
   constructor(public _workerData: MyprofileDataService,public _router:Router,public _act_routs:ActivatedRoute) { }
 
@@ -28,13 +29,30 @@ export class ImageEditComponent implements OnInit {
       worker_image:new FormControl(null)
     });
   }
-  onImageChange(value)
+  onchange(f)
   {
-    this.img=value;
-    console.log(this.img);
+    this.selectedfile = <File>f.target.files[0];
+    console.log(this.selectedfile);
   }
-  onImageSubmit()
+ onImageSubmit()
   {
-    console.log(this.editImage.value);
+    const fd = new FormData();
+    if (this.selectedfile != null)
+    {
+      console.log(this.selectedfile);
+      fd.append("img", this.selectedfile, this.selectedfile.name);
+    }
+    else
+    {
+      // fd.append("img");
+      alert("YOU HAVE IMAGE");
+    }
+    console.log(this.selectedfile);
+    this._workerData.updateWorkerPhoto(this.worker_id,fd).subscribe(
+      (ImgData:any[])=>{
+        console.log(ImgData);
+        this._router.navigate(['/nav/Myprofile/']);
+      }
+    );
   }
 }

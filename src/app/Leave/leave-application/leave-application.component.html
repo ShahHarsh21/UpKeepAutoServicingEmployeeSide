@@ -1,0 +1,36 @@
+<!-- <p>leave-application works!</p> -->
+<div class="container">
+
+  <form [formGroup]="leaveApplicationForm" (ngSubmit)="onApplyLeave()" autocomplete="on">
+
+    <h1 class="hh"><b>Details Of Leave</b></h1>
+
+    <div class="form-group" >
+      <mat-label><b>Leave Start :</b></mat-label><br>
+      <input class="form-control" formControlName="leaveStartDate" type="date"><mat-icon>date</mat-icon><br>
+    </div><br>
+
+    <div class="form-group" >
+      <mat-label><b>Leave Ends :</b></mat-label><br>
+      <input class="form-control" formControlName="leaveEndDate" type="date"><mat-icon>date</mat-icon><br>
+    </div><br>
+
+    <div class="form-group" >
+      <mat-label><b>Leave Type :</b></mat-label><br><br>
+      <div #rbtVehicleSelected (change)="onRadioBtnChangeWorker(rbtVehicleSelected.value)" *ngFor="let item of leave_typeArr ; let index i">
+        <mat-radio-button [value]="item" #rbtVehicleSelected (change)="onRadioBtnChangeWorker(item)">{{item}}</mat-radio-button>
+      </div><br>
+    </div><br>
+
+    <div class="form-group" >
+      <mat-label><b>Comment :</b></mat-label><br>
+      <textarea class="form-control" placeholder="Enter Your Comment" formControlName="comment" type="text"></textarea><br>
+    </div><br>
+
+    <div class="form-group">
+      <button mat-raised-button id="Add Record" type="submit"  [disabled] = "!leaveApplicationForm"  color="primary">Request Leave</button>
+      <button mat-mini-fab id="Add Record" (click)="onClickPastLeaves()" color="accent">Past Leaves</button>
+      <button mat-raised-button id="Add Record" (click)="onBack()" color="warn">Back</button> |
+    </div>
+
+</form>

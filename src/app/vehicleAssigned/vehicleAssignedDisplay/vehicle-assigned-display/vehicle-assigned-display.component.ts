@@ -46,4 +46,9 @@ export class VehicleAssignedDisplayComponent implements OnInit {
 
     this._dialog.open(VehicleViewmoreComponent,{data:row});
   }
+  onClickProductRequirment(row)
+  {
+    console.log(row.vehicle_assigned_id);
+    this._router.navigate(['/nav/AddRequirments/'+row.vehicle_assigned_id])
+  }
 }

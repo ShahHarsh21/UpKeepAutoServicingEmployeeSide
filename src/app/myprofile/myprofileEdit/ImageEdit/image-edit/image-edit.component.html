@@ -8,10 +8,11 @@
 </div>
 <div>
   <mat-label><b>Edit Image :</b></mat-label>
-  <div [formGroup]="editImage" (submit)="onImageSubmit()">
-    <input type="File" formControlName="worker_image" (change)="onImageChange($event)">
-  </div>
+  <form [formGroup]="editImage" (ngSubmit)="onImageSubmit()">
+    <div>
+      <input type="File" formControlName="worker_image" (change)="onchange($event)">
+    </div>
   <div>
-    <button type="submit" class="btn"></button>
+    <button type="submit" color="accent">ADD/Edit Image</button>
   </div>
-</div>
+</form>

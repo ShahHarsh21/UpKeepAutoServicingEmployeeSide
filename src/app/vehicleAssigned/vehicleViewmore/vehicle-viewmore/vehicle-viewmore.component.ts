@@ -34,5 +34,8 @@ export class VehicleViewmoreComponent implements OnInit {
     this.status=this.data.status,
     this.vehicle_Assigned_id=this.data.vehicle_Assigned_id
   }
-
+  onClose()
+  {
+    this.dialogref.close();
+  }
 }

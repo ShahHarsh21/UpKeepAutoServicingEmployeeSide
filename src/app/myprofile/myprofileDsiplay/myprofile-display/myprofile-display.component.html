@@ -1,38 +1,31 @@
+<div class="container">
+    <div class="row no-gutters"  *ngFor="let item of workerArr">
+    <img src="{{worker_image}}">
 
-<!-- <p>myprofile-display works!</p>
-<div>
-  <mat-card>
-    <mat-card-title>My Profile</mat-card-title>
-      <img src="{{worker_image}}">
-    <mat-card-content >
-      <mat-label>{{worker_name}}</mat-label>
-      <mat-label>{{email_id}}</mat-label>
-      <mat-label>{{mobile_no}}</mat-label>
-      <mat-label>{{address}}</mat-label>
-      <mat-label>{{joining_date}}</mat-label>
-    </mat-card-content>
-  </mat-card>
-</div> -->
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row no-gutters"  *ngFor="let item of workerArr">
-    <div>
-      <img src="{{worker_image}}" class="card-img" alt="profile picture" height="100px" width="200px">
-      <div>
-        <button (click)="onImageEdit()">Edit Image</button>
-      </div>
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">My Profile</h5>
-        <p class="card-text">{{item.worker_name}}</p>
-        <p class="card-text">{{item.email_id}}</p>
-        <p class="card-text">{{item.address}}</p>
-        <p class="card-text">{{item.mobile_no}}</p>
-        <p class="card-text">{{item.joining_date}}</p>
-      </div>
-    </div>
-    <div>
+    <div class="info">
+      <mat-list>
+
+        <mat-label><b>Name :</b></mat-label><br>
+        <mat-list-item><b>{{item.worker_name}}</b></mat-list-item>
+        <mat-divider></mat-divider>
+
+        <mat-label><b>Email Id :</b></mat-label><br>
+        <mat-list-item>{{item.email_id}}</mat-list-item>
+        <mat-divider></mat-divider>
+
+        <mat-label><b>Address :</b></mat-label><br>
+        <mat-list-item>{{item.address}}</mat-list-item>
+        <mat-divider></mat-divider>
+
+        <mat-label><b>Contact Details :</b></mat-label><br>
+        <mat-list-item>{{item.mobile_no}}</mat-list-item>
+        <mat-divider></mat-divider>
+
+        <mat-label><b>Your Joining Date :</b></mat-label><br>
+        <mat-list-item>{{item.joining_date}}</mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
       <button (click)="onProfileEdit()">Edit Profile</button>
     </div>
+    <button (click)="onImageEdit()">Add/Edit Image</button>
   </div>
-</div>

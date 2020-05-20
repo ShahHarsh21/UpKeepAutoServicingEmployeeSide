@@ -9,6 +9,7 @@ export class MyprofileDataService {
   url:string=environment.url+'workerDetails/';
   workerUrl : string = environment.url+'worker_update/';
   passwordUrl : string = environment.url+'passwordChange/';
+  imageUrl:string= environment.url+'worker_image/';
   constructor(public _http:HttpClient) { }
 
   getWorkerById(worker_id)
@@ -28,5 +29,12 @@ export class MyprofileDataService {
   getPasswordById(worker_id)
   {
     return this._http.get(this.passwordUrl+worker_id);
+  }
+  updateWorkerPhoto(worker_id,fd)
+  {
+
+      console.log(worker_id);
+      console.log(fd);
+      return this._http.put(this.imageUrl + worker_id, fd);
   }
 }

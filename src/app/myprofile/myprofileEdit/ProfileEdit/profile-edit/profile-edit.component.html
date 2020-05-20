@@ -35,8 +35,8 @@
     </div><br>
 
     <div class="form-group">
-      <button  class="btn-btn success" >Submit</button>
-      <button  class="btn" (click)="onBack()" >Back</button>
+      <button mat-raised-button id="Add Record" type="submit"  [disabled] = "!editProfile.valid"  color="primary">Submit</button>
+      <button mat-raised-button id="Add Record" (click)="onBack()"  color="accent">Back</button>
     </div>
 
 </form>
