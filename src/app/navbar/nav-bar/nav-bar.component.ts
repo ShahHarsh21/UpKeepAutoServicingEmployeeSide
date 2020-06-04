@@ -20,7 +20,7 @@ export class NavBarComponent implements OnInit {
   constructor(private breakpointObserver: BreakpointObserver,public _router:Router) { }
 
   ngOnInit() {
-    this.email_id=localStorage.getItem('email_id');
+    this.email_id=localStorage.getItem('EmailID');
 
   }
   onLogoutClick()

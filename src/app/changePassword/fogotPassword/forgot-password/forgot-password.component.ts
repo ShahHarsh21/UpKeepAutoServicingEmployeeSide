@@ -26,7 +26,7 @@ export class ForgotPasswordComponent implements OnInit {
     console.log(this.params_worker_id);
     this._mail.getPasswordById(this.params_worker_id).subscribe(
       (PassData : any)=>{
-        console.log();
+        console.log(PassData);
         this.password = PassData;
       }
     );
@@ -43,21 +43,21 @@ export class ForgotPasswordComponent implements OnInit {
     if(this.forgotPassword.get('email').value != null)
     {
       let a = this.forgotPassword.get('email').value;
-
+console.log(a);
       this._mail.getUserByEmailId(a).subscribe(
         (data:any)=>{
           console.log(data);
           this.mail_id = data[0].email_id;
           this.password = data[0].password;
           console.log(this.mail_id+"\n"+this.password);
-          if(data != a)
+          if(this.mail_id != a)
           {
             alert("Please Enter Valid Email Id");
           }
           else
           {
             this._mail.passwordMail(a,"Reset Password", "Hi "+data[0].email_id + " , \n\n\nYour Password is "+this.password+"\nDon't Share your credentials to anyone . \n We recommand you to change your password ."+
-              "\n\n\n\n\n\n\n\n\n\nThank You, \n Team UpKeepAutoServicing").subscribe(
+              "\n\n\n\n\n\n\n\n\n\nThank You \n Team UpKeepAutoServicing").subscribe(
                 (Data)=>{
                           alert("Mail has been send to your Email-Id"+"\n Please check Out");
                         });

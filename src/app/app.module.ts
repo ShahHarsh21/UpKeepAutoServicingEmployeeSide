@@ -18,6 +18,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { NavBarComponent } from './navbar/nav-bar/nav-bar.component';
 import { VehicleAssignedDisplayComponent } from './vehicleAssigned/vehicleAssignedDisplay/vehicle-assigned-display/vehicle-assigned-display.component';
 import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatGridListModule, MatGridTile } from '@angular/material/grid-list';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatPseudoCheckboxModule } from '@angular/material/core';
@@ -35,6 +36,11 @@ import { AddRequirmentsComponent } from './vehicleAssigned/Requirments/add-requi
 import { ForgotPasswordComponent } from './changepassword/fogotPassword/forgot-password/forgot-password.component';
 import { LeaveApplicationComponent } from './Leave/leave-application/leave-application.component';
 import { PastLeaveComponent } from './leave/past/past-leave/past-leave.component';
+import { ChartsModule } from '@progress/kendo-angular-charts';
+import 'hammerjs';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +57,8 @@ import { PastLeaveComponent } from './leave/past/past-leave/past-leave.component
     AddRequirmentsComponent,
     ForgotPasswordComponent,
     LeaveApplicationComponent,
-    PastLeaveComponent
+    PastLeaveComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -74,8 +81,10 @@ import { PastLeaveComponent } from './leave/past/past-leave/past-leave.component
     MatFormFieldModule,
     MatDialogModule,
     FormsModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    ChartsModule,
+    MatListModule,
+    MatGridListModule,
   ],
   entryComponents: [
       VehicleViewmoreComponent

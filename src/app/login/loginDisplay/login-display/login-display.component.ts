@@ -15,8 +15,8 @@ export class LoginDisplayComponent implements OnInit {
 
   ngOnInit() {
     this.WorkerloginForm = new FormGroup({
-      email_id: new FormControl('', [Validators.required,Validators.email]),
-      password: new FormControl('', [Validators.required])
+      email_id: new FormControl(null, [Validators.required,Validators.email]),
+      password: new FormControl(null, [Validators.required])
     });
 
   }
@@ -33,6 +33,8 @@ export class LoginDisplayComponent implements OnInit {
           {
             console.log('valid');
             localStorage.setItem('worker_id', loginData[0].worker_id);
+            localStorage.setItem('EmailID',loginData[0].email_id);
+
             console.log(localStorage.getItem('worker_id'));
             this._router.navigate(['/nav']);
           }

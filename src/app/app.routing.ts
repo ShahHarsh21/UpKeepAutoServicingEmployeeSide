@@ -12,6 +12,7 @@ import { AddRequirmentsComponent } from './vehicleAssigned/Requirments/add-requi
 import { ForgotPasswordComponent } from './changepassword/fogotPassword/forgot-password/forgot-password.component';
 import { LeaveApplicationComponent } from './Leave/leave-application/leave-application.component';
 import { PastLeaveComponent } from './leave/past/past-leave/past-leave.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 
 
@@ -19,7 +20,7 @@ const arr:Routes=[
     {path:'',component:LoginDisplayComponent},
     {
       path:'nav',canActivate:[UserauthguardService],component:NavBarComponent,children:[
-        {path:'',component:VehicleAssignedDisplayComponent},
+        {path:'',component:AdminDashboardComponent},
         {path:'vehicleAssigned',component:VehicleAssignedDisplayComponent},
         {path:'vehicleAssignedEdit/:worker_id',component:VehicleAssignedEditComponent},
         {path:'AddRequirments/:vehicle_assigned_id',component:AddRequirmentsComponent},

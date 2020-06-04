@@ -19,12 +19,6 @@ export class VehicleAssignedDataService {
     // const body=JSON.stringify(vehicle_assigned_id);
     return this._http.get(this.url + worker_id);
   }
-  // getWorkerAssignedData(worker_id)
-  // {
-  //   // const body=JSON.stringify(email_id);
-  //   // console.log("http://localhost:3000/workerDetails/viral124@gmail.com");
-  //   return this._http.get(this.workerUrl+worker_id);
-  // }
   updateService(item)
   {
     const body=JSON.stringify(item);
@@ -35,13 +29,13 @@ export class VehicleAssignedDataService {
     console.log(service_id);
     return this._http.get(this.serviceUrl+service_id);
   }
-  updateStatusRemark(item)
+  updateStatusRemark(item,service_id)
   {
-    console.log(item);
+    console.log(item,item.service_id);
     const body=JSON.stringify(item);
-    console.log(body);
+    // console.log(body);
     const head = new HttpHeaders().set(environment.header, environment.value);
-    return this._http.put(this.statusRemarkUrl,body,{headers:head});
+    return this._http.put(this.statusRemarkUrl+item.service_id,body,{headers:head});
   }
   getAllProduct()
   {
@@ -49,6 +43,7 @@ export class VehicleAssignedDataService {
   }
   updateAssignedVehicle(vehicle_assigned_id,item)
   {
+
     let obj = { "vehicle_assigned_id": vehicle_assigned_id, "Products": item };
     const body=JSON.stringify(obj);
     console.log(body);

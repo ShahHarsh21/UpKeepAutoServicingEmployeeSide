@@ -22,6 +22,8 @@ export class ForgotPasswordServiceService {
     return this._http.get(this.password_url+worker_id);
   }
 
+
+
   passwordMail(email_id,message,password)
   {
     console.log(email_id,message,password);
@@ -30,7 +32,7 @@ export class ForgotPasswordServiceService {
       "message"  : password,
       "subject"  : message
     }
-
+console.log(body);
     let header = new HttpHeaders().set('content-type','application/json');
 
     return this._http.post(this.emailUrl,body,{headers : header});
