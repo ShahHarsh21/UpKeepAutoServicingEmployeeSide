@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "UpkeepAutoServicingEmployeeSide"
+  "defaultProject": "UpkeepAutoServicingEmployeeSide",
+  "cli": {
+    "analytics": "293f3bda-f9bb-419d-8e98-51c7d330c252"
+  }
 }
