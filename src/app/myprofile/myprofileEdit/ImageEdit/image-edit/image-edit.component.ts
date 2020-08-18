@@ -55,4 +55,8 @@ export class ImageEditComponent implements OnInit {
       }
     );
   }
+  onCancle()
+  {
+    this._router.navigate(['/nav/Myprofile/']);
+  }
 }

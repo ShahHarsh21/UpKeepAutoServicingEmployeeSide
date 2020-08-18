@@ -8,6 +8,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { Product } from '../class/product_class';
+import { VehicleAssignedDataService } from '../vehicleAssigned/vehicle-assigned-data.service';
 // import { TopProducts } from '../top-products';
 
 
@@ -48,10 +49,11 @@ export class AdminDashboardComponent implements OnInit {
   //   return e.category;
   // }
   fk_worker_id : number ;
+  a_count : number = 0;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor(public serobj: DashboardserviceService) {
+  constructor(private _assignedData : VehicleAssignedDataService,public serobj: DashboardserviceService) {
     // this.labelContent1 = this.labelContent1.bind(this);
     // this.dataSource = new MatTableDataSource();
   }
@@ -76,9 +78,16 @@ export class AdminDashboardComponent implements OnInit {
           this.c.push(dataCustomerCount[i].Done);
         }
         console.log(this.c);
+
+        this._assignedData.getWorkerAssignedData(this.fk_worker_id).subscribe(
+          (Data : any)=>{
+            this.a_count = Data.length;
+            console.log(this.a_count);
+          }
+        );
       }
     );
-
+  }
     // this.serobj.getTodaysCash().subscribe(
     //   (dataTodayCashCount: any) => {
     //     // console.log(dataCustomerCount);
@@ -139,7 +148,6 @@ export class AdminDashboardComponent implements OnInit {
 
     //   }
     // );
-  }
 
   // public labelContent1(args: LegendLabelsContentArgs): string
   // {

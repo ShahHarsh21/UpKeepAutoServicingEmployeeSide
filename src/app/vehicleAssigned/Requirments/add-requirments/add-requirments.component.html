@@ -30,7 +30,7 @@
 
       <ng-container matColumnDef="product_image">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Product Image :</th>
-        <td *matCellDef="let row" ><img src="{{product_image}}"></td>
+        <td *matCellDef="let row" ><img  height="50" width="50" src="http://localhost:3000/Images/Product_image/{{row.product_image}}"></td>
       </ng-container>
 
       <ng-container matColumnDef="product_color">

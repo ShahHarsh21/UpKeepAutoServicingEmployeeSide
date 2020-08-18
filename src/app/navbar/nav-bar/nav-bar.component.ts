@@ -23,6 +23,10 @@ export class NavBarComponent implements OnInit {
     this.email_id=localStorage.getItem('EmailID');
 
   }
+  onClickLogo()
+  {
+    this._router.navigate(['/nav/']);
+  }
   onLogoutClick()
   {
     localStorage.clear();

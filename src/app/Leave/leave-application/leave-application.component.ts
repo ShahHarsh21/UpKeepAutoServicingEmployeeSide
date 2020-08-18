@@ -24,9 +24,8 @@ export class LeaveApplicationComponent implements OnInit {
 
     this.leaveApplicationForm = new FormGroup({
       fk_worker_id : new FormControl(this.worker_id),
-      worker_name : new FormControl(null),
-      email_id : new FormControl(null),
-      mobile_no : new FormControl(null),
+      // email_id : new FormControl(null),
+      // mobile_no : new FormControl(null),
       leaveStartDate : new FormControl(null),
       leaveEndDate : new FormControl(null),
       Leave_type : new FormControl(null),

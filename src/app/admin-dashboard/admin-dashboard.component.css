@@ -80,3 +80,25 @@ body {
   padding: 0%;
   color: white;
 }
+.card-2
+{
+  width: 700px;
+  min-height: 450px;
+  float:right;
+  margin-left: 10px;
+  align-items: right;
+  border-radius: 1%;
+}
+.header
+{
+  font-style: normal;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.content
+{
+  text-align: center;
+}
+.done
+{
+
+}

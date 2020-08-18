@@ -32,9 +32,9 @@ button {
   border: none;
   cursor: pointer;
   width: 20%;
-  height: 5%;
+  height: 0%;
   align-items: baseline;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 /* Add a hover effect for buttons */

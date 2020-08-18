@@ -3,12 +3,14 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar><div class="imgcontainer">
+      <img  (click)="onClickLogo()" src="http://localhost:3000/Images/Logo/Logo.jpeg" class="avatar">
+    </div></mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/nav/Myprofile"><b>My Profile</b></a>
-      <a mat-list-item routerLink="/nav/vehicleAssigned"><b>Assigned Vehicles</b></a>
-      <a mat-list-item routerLink="/nav/changePassword"><b>Change Password</b></a>
-      <a mat-list-item routerLink="/nav/leaveApplication"><b>Leave Application</b></a>
+      <a mat-list-item routerLink="/nav/Myprofile"><i class="material-icons">account_circle</i>My Profile</a>
+      <a mat-list-item routerLink="/nav/vehicleAssigned"><i class="material-icons">time_to_leave</i>Assigned Vehicles</a>
+      <a mat-list-item routerLink="/nav/changePassword"><i  class="material-icons">vpn_key</i>Change Password</a>
+      <a mat-list-item routerLink="/nav/leaveApplication"><i class="material-icons">wysiwyg</i>Leave Application</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -19,7 +21,8 @@
         mat-icon-button
         (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        <mat-icon aria-label="Side nav toggle icon">
+        </mat-icon>
       </button>
       <span>Welcome to UpKeepAutoServicing <i class="material-icons">account_circle</i> {{email_id}}</span>
       <button mat-raised-button (click)="onLogoutClick()" class="mybtn" color="warn" aria-label="Example icon-button with a heart icon">Logout</button>

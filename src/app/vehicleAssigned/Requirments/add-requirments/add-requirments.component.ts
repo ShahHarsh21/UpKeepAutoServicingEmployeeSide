@@ -38,6 +38,7 @@ export class AddRequirmentsComponent implements OnInit {
     this._productData.getAllImages().subscribe(
       (productImages : any[])=>{
         console.log(productImages);
+        this.productarr = productImages;
         // this.productarr = environment.url + '/Images/Product_image/' + productImages[0];
       }
     );
